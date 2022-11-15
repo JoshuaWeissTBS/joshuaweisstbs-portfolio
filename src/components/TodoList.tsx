@@ -2,11 +2,11 @@ import React from 'react';
 import { Todo } from '../common/types';
 import TodoRow from './TodoRow';
 
-function TodoList({ todos }: { todos: Todo[] }) {
+function TodoList({ todos, toggleTodo }: { todos: Todo[], toggleTodo: (id: number) => void }) {
   return (
     <>
       {todos.map(todo => {
-        return <TodoRow todo={todo} />
+        return <TodoRow toggleTodo={toggleTodo} todo={todo} />
       })}
     </>
   )
